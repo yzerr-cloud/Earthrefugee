@@ -1,0 +1,108 @@
+/* ===== 디자인 토큰: 모든 값은 여기서만 정의한다 ===== */
+
+/* 색 · 밝은 모드 */
+:root, [data-theme="light"] {
+  color-scheme: light;
+  --color-bg-base: #F2F5FA;
+  --color-surface: #FFFFFF;
+  --color-surface-sub: #E6ECF6;
+  --color-border: #C9D4E6;
+  --color-primary-weak: #D6E0F5;
+  --color-primary: #1F3F9E;
+  --color-primary-strong: #14296B;
+  --color-on-primary: #FFFFFF;
+  --color-text-title: #0E1A3D;
+  --color-text-body: #26335C;
+  --color-text-sub: #54628A;
+  --color-disabled-bg: #DDE3EE;
+  --color-disabled-text: #7A86A5;
+  --color-danger: #C62828;
+  --color-danger-bg: #FBE3E3;
+  /* 파생값: 기존 토큰을 투명도로 섞은 것만 사용 */
+  --color-scrim: color-mix(in srgb, var(--color-text-title) 50%, transparent);
+  --shadow-color: color-mix(in srgb, var(--color-text-title) 12%, transparent);
+}
+
+/* 색 · 어두운 모드 */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-base: #070D1F;
+  --color-surface: #0E1731;
+  --color-surface-sub: #16224A;
+  --color-border: #2A3A6B;
+  --color-primary-weak: #1E2F66;
+  --color-primary: #7FA2FF;
+  --color-primary-strong: #A9C0FF;
+  --color-on-primary: #070D1F;
+  --color-text-title: #F1F5FF;
+  --color-text-body: #CBD5F0;
+  --color-text-sub: #93A1C8;
+  --color-disabled-bg: #16224A;
+  --color-disabled-text: #5B6894;
+  --color-danger: #FF8A80;
+  --color-danger-bg: #3A1518;
+  --color-scrim: color-mix(in srgb, var(--color-bg-base) 75%, transparent);
+  --shadow-color: color-mix(in srgb, var(--color-bg-base) 70%, transparent);
+}
+
+/* 글꼴 */
+:root {
+  --font-text: "Pretendard Variable", Pretendard, sans-serif;
+  --font-icon: "Tossface", sans-serif;
+
+  /* 글자 크기 */
+  --fs-display: 28px;   /* 핵심 숫자 */
+  --fs-title: 20px;     /* 화면 제목 */
+  --fs-heading: 16px;   /* 카드 제목 */
+  --fs-body: 15px;      /* 본문 */
+  --fs-sub: 13px;       /* 보조 설명 */
+  --fs-caption: 12px;   /* 최소 크기 */
+  /* 굵기 */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-heavy: 800;
+  /* 줄 간격 */
+  --lh-tight: 1.2;
+  --lh-sub: 1.45;
+  --lh-body: 1.55;
+
+  /* 간격 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  /* 카드 */
+  --card-gap: var(--space-3);
+  --card-padding: var(--space-4);
+  --card-h-primary: 244px;
+  --card-h-secondary: 184px;
+
+  /* 모서리 */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* 테두리 */
+  --border-thin: 1px;
+  --border-strong: 2px;
+
+  /* 그림자 */
+  --shadow-card: 0 1px 2px var(--shadow-color);
+  --shadow-sheet: 0 -8px 24px var(--shadow-color);
+  --shadow-nav: 0 -2px 12px var(--shadow-color);
+  --shadow-toast: 0 6px 18px var(--shadow-color);
+
+  /* 크기 */
+  --touch-min: 44px;
+  --nav-h: 64px;
+  --app-max: 430px;
+  --sheet-max-h: 86dvh;
+
+  /* 움직임 */
+  --motion-fast: 140ms;
+  --motion-base: 260ms;
+}

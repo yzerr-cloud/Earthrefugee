@@ -1,0 +1,35 @@
+/* 상단바 */
+.topbar { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3);
+  padding: calc(var(--space-3) + env(safe-area-inset-top)) var(--space-4) var(--space-2); background: var(--color-bg-base); }
+.topbar__text { min-width: 0; }
+.topbar__eyebrow { font-size: var(--fs-caption); font-weight: var(--fw-bold); color: var(--color-text-sub); }
+.topbar__title { font-size: var(--fs-title); font-weight: var(--fw-heavy); color: var(--color-text-title); line-height: var(--lh-tight); overflow-wrap: anywhere; }
+.topbar .btn { flex: 0 0 auto; padding: 0 var(--space-3); }
+
+/* 거점 화면 */
+.screen { display: flex; flex-direction: column; gap: var(--space-3); }
+.screen__section { padding: 0 var(--space-4); }
+.screen__section-title { font-size: var(--fs-sub); font-weight: var(--fw-bold); color: var(--color-text-sub); margin-bottom: var(--space-2); }
+
+/* 벤토 그리드: 6칸 */
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--card-gap); }
+.bento__exp { grid-column: span 4; min-height: var(--card-h-primary); }
+.bento__reward { grid-column: span 2; min-height: var(--card-h-primary); }
+.bento__team, .bento__clue { grid-column: span 3; min-height: var(--card-h-secondary); }
+@media (max-width: 359px) {
+  .bento__exp, .bento__reward { grid-column: span 6; min-height: 0; }
+}
+
+/* 카드 내부 */
+.exp__time { display: flex; align-items: baseline; gap: var(--space-2); flex-wrap: wrap; }
+.exp__empty { display: flex; flex-direction: column; gap: var(--space-2); flex: 1; justify-content: center; }
+.reward__lines { display: flex; flex-direction: column; gap: 2px; }
+.reward__line { display: flex; justify-content: space-between; gap: var(--space-1); font-size: var(--fs-sub); color: var(--color-text-body); line-height: var(--lh-sub); }
+.reward__line b { color: var(--color-text-title); font-weight: var(--fw-bold); white-space: nowrap; }
+.team__list { display: flex; flex-direction: column; gap: 2px; }
+.team__row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-1); font-size: var(--fs-sub); line-height: var(--lh-sub); }
+.team__name { color: var(--color-text-title); font-weight: var(--fw-bold); }
+.team__role { color: var(--color-text-sub); }
+.team__row--empty .team__name { color: var(--color-disabled-text); font-weight: var(--fw-regular); }
+.clue__text { font-size: var(--fs-body); font-weight: var(--fw-bold); color: var(--color-text-title); line-height: var(--lh-sub);
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }

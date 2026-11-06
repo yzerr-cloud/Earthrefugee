@@ -1,0 +1,4 @@
+.tf { font-family: var(--font-icon); font-style: normal; line-height: 1; }
+.icon-label { display: inline-flex; align-items: center; gap: var(--space-1); min-width: 0; }
+.icon-label__text { font-family: var(--font-text); }
+.icon-label--stack { flex-direction: column; gap: 2px; }

@@ -1,0 +1,30 @@
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  min-width: 0; padding: var(--card-padding);
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+}
+.card--emphasis { border: var(--border-strong) solid var(--color-primary); }
+.card--tappable { cursor: pointer; transition: background var(--motion-fast), transform var(--motion-fast); }
+.card--tappable:active { background: var(--color-surface-sub); transform: scale(0.985); }
+button.card { width: 100%; font: inherit; color: inherit; }
+
+.card__eyebrow { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); min-width: 0; }
+.card__label { font-size: var(--fs-sub); font-weight: var(--fw-bold); color: var(--color-text-sub); line-height: var(--lh-sub); }
+.card__title { font-size: var(--fs-heading); font-weight: var(--fw-bold); color: var(--color-text-title); line-height: var(--lh-tight); overflow-wrap: anywhere; }
+.card__number { font-size: var(--fs-display); font-weight: var(--fw-heavy); color: var(--color-text-title); line-height: var(--lh-tight); }
+.card__number small { font-size: var(--fs-body); font-weight: var(--fw-bold); color: var(--color-text-sub); margin-left: 2px; }
+.card__sub { font-size: var(--fs-sub); color: var(--color-text-sub); line-height: var(--lh-sub); overflow-wrap: anywhere; }
+.card__spacer { flex: 1 1 auto; }
+.card__more { font-size: var(--fs-sub); font-weight: var(--fw-bold); color: var(--color-primary); }
+
+.badge {
+  display: inline-flex; align-items: center; padding: 2px var(--space-2);
+  border-radius: var(--radius-pill); background: var(--color-primary-weak); color: var(--color-primary-strong);
+  font-size: var(--fs-caption); font-weight: var(--fw-bold); line-height: var(--lh-sub); white-space: nowrap;
+}
+.badge--danger { background: var(--color-danger-bg); color: var(--color-danger); }
+.badge--muted { background: var(--color-surface-sub); color: var(--color-text-sub); }

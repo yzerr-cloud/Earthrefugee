@@ -1,0 +1,33 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg-base);
+  color: var(--color-text-body);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-tap-highlight-color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+body.is-scroll-locked { overflow: hidden; }
+h1, h2, h3, p, dl, dd, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+button { font: inherit; color: inherit; margin: 0; cursor: pointer; }
+:focus-visible { outline: var(--border-strong) solid var(--color-primary); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+.app {
+  position: relative;
+  max-width: var(--app-max);
+  min-height: 100dvh;
+  margin: 0 auto;
+  background: var(--color-bg-base);
+  padding-bottom: calc(var(--nav-h) + var(--space-6) + env(safe-area-inset-bottom));
+}
+@media (min-width: 600px) {
+  .app { border-inline: var(--border-thin) solid var(--color-border); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

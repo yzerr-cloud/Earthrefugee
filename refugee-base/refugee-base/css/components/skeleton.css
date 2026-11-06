@@ -1,0 +1,12 @@
+.skeleton {
+  display: block; border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-surface-sub) 0%, var(--color-border) 50%, var(--color-surface-sub) 100%);
+  background-size: 200% 100%; animation: sk-shimmer 1.4s ease-in-out infinite;
+}
+.skeleton--line { height: 14px; }
+.skeleton--num { height: 30px; width: 60%; }
+.skeleton--btn { height: var(--touch-min); border-radius: var(--radius-md); }
+.skeleton--chip { height: var(--touch-min); width: 72px; border-radius: var(--radius-pill); }
+.skeleton--res { flex: 0 0 auto; width: 104px; height: 56px; border-radius: var(--radius-md); }
+.card--skeleton { box-shadow: none; }
+@keyframes sk-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }

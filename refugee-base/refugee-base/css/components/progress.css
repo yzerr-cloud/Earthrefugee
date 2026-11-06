@@ -1,0 +1,8 @@
+.progress { display: flex; align-items: center; gap: var(--space-2); }
+.progress__track { flex: 1 1 auto; height: 8px; background: var(--color-primary-weak); border-radius: var(--radius-pill); overflow: hidden; }
+.progress__fill { height: 100%; width: 0; background: var(--color-primary); border-radius: var(--radius-pill); transition: width 600ms linear; }
+.progress__text { font-size: var(--fs-sub); font-weight: var(--fw-bold); color: var(--color-text-title); min-width: 3ch; text-align: right; }
+
+.steps { display: flex; gap: var(--space-1); }
+.steps__item { flex: 1; height: 6px; border-radius: var(--radius-pill); background: var(--color-primary-weak); }
+.steps__item.is-done { background: var(--color-primary); }

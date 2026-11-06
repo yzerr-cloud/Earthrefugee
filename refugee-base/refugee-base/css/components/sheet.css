@@ -1,0 +1,38 @@
+.sheet { position: fixed; inset: 0; z-index: 30; visibility: hidden; pointer-events: none; transition: visibility 0s linear var(--motion-base); }
+.sheet.is-open { visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.sheet__scrim { position: absolute; inset: 0; background: var(--color-scrim); opacity: 0; transition: opacity var(--motion-base); }
+.sheet.is-open .sheet__scrim { opacity: 1; }
+.sheet__panel {
+  position: absolute; bottom: 0; left: 50%; width: min(100%, var(--app-max)); max-height: var(--sheet-max-h);
+  display: flex; flex-direction: column;
+  background: var(--color-surface); border: var(--border-thin) solid var(--color-border); border-bottom: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0; box-shadow: var(--shadow-sheet);
+  transform: translate(-50%, 100%); transition: transform var(--motion-base) ease-out; outline: none;
+}
+.sheet.is-open .sheet__panel { transform: translate(-50%, 0); }
+.sheet__grab { width: 40px; height: 4px; margin: var(--space-2) auto 0; border-radius: var(--radius-pill); background: var(--color-border); flex: 0 0 auto; }
+.sheet__header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: var(--space-3) var(--space-4); flex: 0 0 auto; }
+.sheet__title { font-size: var(--fs-title); font-weight: var(--fw-bold); color: var(--color-text-title); line-height: var(--lh-tight); overflow-wrap: anywhere; }
+.sheet__body { overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--space-4) calc(var(--space-6) + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: var(--space-4); }
+
+.sec { display: flex; flex-direction: column; gap: var(--space-2); }
+.sec__title { font-size: var(--fs-sub); font-weight: var(--fw-bold); color: var(--color-text-sub); }
+.panel { background: var(--color-surface-sub); border-radius: var(--radius-md); padding: var(--space-3); }
+.kv { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: var(--border-thin) solid var(--color-border); font-size: var(--fs-body); }
+.kv:last-child { border-bottom: 0; }
+.kv dt { color: var(--color-text-sub); font-size: var(--fs-sub); }
+.kv dd { color: var(--color-text-title); font-weight: var(--fw-bold); text-align: right; overflow-wrap: anywhere; }
+.list-row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: var(--border-thin) solid var(--color-border); }
+.list-row:last-child { border-bottom: 0; }
+.list-row__main { color: var(--color-text-title); font-weight: var(--fw-bold); }
+.list-row__sub { color: var(--color-text-sub); font-size: var(--fs-sub); }
+.quote { font-size: var(--fs-heading); font-weight: var(--fw-bold); color: var(--color-text-title); line-height: var(--lh-body); padding: var(--space-3) var(--space-4); background: var(--color-primary-weak); border-left: 4px solid var(--color-primary); border-radius: var(--radius-sm); }
+.log { display: flex; gap: var(--space-3); font-size: var(--fs-sub); color: var(--color-text-body); line-height: var(--lh-sub); padding: var(--space-1) 0; }
+.log__time { color: var(--color-text-sub); font-weight: var(--fw-bold); flex: 0 0 auto; min-width: 44px; }
+.step { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) 0; }
+.step__mark { flex: 0 0 auto; width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-pill); border: var(--border-strong) solid var(--color-border); font-size: var(--fs-caption); font-weight: var(--fw-heavy); color: var(--color-text-sub); }
+.step.is-done .step__mark { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-on-primary); }
+.step.is-current .step__mark { border-color: var(--color-primary); color: var(--color-primary-strong); background: var(--color-primary-weak); }
+.step__text { flex: 1; color: var(--color-text-body); }
+.step.is-locked .step__text { color: var(--color-text-sub); }
+.step.is-current .step__text { color: var(--color-text-title); font-weight: var(--fw-bold); }
